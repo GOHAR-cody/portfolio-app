@@ -1,0 +1,1222 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="img/music.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="description" content="Gohar's portfolio - Software Engineer, blogger, and designer specializing in futuristic UI experiences.">
+    <title>GOHAR</title>
+    <link rel="stylesheet" href="gohar.css">
+
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="/website/css/uicons-bold-rounded.css"
+rel="stylesheet">
+<style>
+
+  /* .home-wrapper{
+    position:relative;
+top:15em
+  } */
+  .hero{
+     position:relative;
+    left:-11.5em;
+  }
+  .circle-glow {
+  position: relative;
+  width: 200px; /* Adjust as needed */
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #00abf0;
+  box-shadow: 0 0 20px #00abf0;
+  margin: 0 auto 20px;
+}
+
+.circle-glow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; /* Makes the image perfectly round */
+}
+
+</style>
+</head>
+
+<body>
+
+   <!-- header design -->
+   <header class="header">
+    <a href="#" class="logo">Gohar.</a>
+
+    <div class="bx bx-menu" id="menu-icon"></div>
+    <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Blogs</a>
+        <!-- <a href="#skills">Skills</a> -->
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact </a>
+
+        <span class="active-nav"></span>
+    </nav>
+   </header>
+
+  <!-- home section design -->
+<section class="home" id="home">
+  <div class="home-wrapper">
+    <!-- LEFT: Text Content -->
+    <div class="home-content">
+      <h1>Hi, I'm <span style="color:#00abf0;">Gohar</span></h1>
+<div class="hero">
+      <div class="text-animate">
+        <div class="typewriter">
+          <h3 id="animated-role">Software Engineer</h3>
+        </div>
+      </div>
+
+      <p>Fueled By Curiosity Powrerd By Code.</p>
+
+      <div class="btn-box">
+        <a href="#" class="btn">Hire me</a>
+        <a href="#" class="btn">Resume</a>
+      </div>
+
+      <div class="inline-stats">
+        <div class="stat-box">
+          <div class="stat-label">YEARS OF</div>
+          <div class="stat-value" data-count="12">0</div>
+          <div class="stat-label">EXPERIENCE</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">PROJECTS</div>
+          <div class="stat-value" data-count="26">0</div>
+          <div class="stat-label">COMPLETED</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">TECHNOLOGIES</div>
+          <div class="stat-value" data-count="8">0</div>
+          <div class="stat-label">MASTERED</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">CODE</div>
+          <div class="stat-value" data-count="500">0</div>
+          <div class="stat-label">COMMITS</div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- RIGHT: Image -->
+    <div class="home-image">
+      <img src="pfp.jpeg" alt="Profile Photo">
+    </div>
+  </div>
+
+  <style>
+   .home-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 9%;
+  min-height: 100vh;
+  gap: 6rem; /* Increased from 2rem to 4rem */
+}
+
+    .home-content {
+      flex: 1;
+      max-width: 60%;
+      color: white;
+    }
+
+    .home-image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .home-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 50%;
+      border: 5px solid #00abf0;
+      box-shadow: 0 0 20px #00abf0;
+      animation: floatImage 4s ease-in-out infinite;
+    }
+
+    @keyframes floatImage {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-2.4rem);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .inline-stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-top: 7rem;
+      color: white;
+    }
+
+    .stat-box {
+      text-align: center;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #aaa;
+      text-transform: uppercase;
+    }
+
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .home-wrapper {
+        flex-direction: column;
+        padding: 6rem 5% 2rem;
+      }
+      
+      .home-content {
+        max-width: 100%;
+        order: 2;
+        text-align: center;
+      }
+      
+      .home-image {
+        order: 1;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+      
+      .inline-stats {
+        justify-content: center;
+        
+      }
+    }
+  </style>
+
+  <script>
+    // Count-up effect for stats
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".stat-value").forEach((el) => {
+        const endValue = parseInt(el.dataset.count);
+        let current = 0;
+        const duration = 2000;
+        const increment = endValue / (duration / 20);
+
+        const counter = setInterval(() => {
+          current += increment;
+          if (current >= endValue) {
+            el.textContent = endValue;
+            clearInterval(counter);
+          } else {
+            el.textContent = Math.floor(current);
+          }
+        }, 20);
+      });
+    });
+  </script>
+</section>
+
+<!-- About Me Section -->
+<section id="about" style="position: relative; z-index: 1; overflow: hidden;">
+  <div id="about-particles" style="position: absolute; width: 100%; height: 100%; z-index: -1;"></div>
+  <div class="cursor" id="about-cursor"></div>
+
+  <div class="about-container">
+    <h1>About <span>Me</span></h1>
+ 
+    <div class="circle-glow">
+      <img src="pfp2.jpeg" height="100%" width="100%">
+      
+
+       
+      </div>
+      <div class="floating-dot"> 
+    </div>
+
+    <div class="name">Gohar Fatima Ali</div>
+    <div class="line"></div>
+    <p style="font-size:15px">Once upon a 'Hello World,' a young girl got her passion ...
+    With a BS in Software Engineering, I’ve tackled real-world challenges through diverse projects and internships. My skills span PHP, Laravel, JavaScript, Python, Machine Learning, LLMs, .NET, APIs, DSA, and beyond.<br>
+    When I’m not hunting for the perfect algorithm, I’m experimenting with UI design, exploring tech trends, or poetifying thoughts into words.<br>
+    Stay tuned for more exciting developments in my journey.
+  </p>
+<br>
+    <button class="btn" onclick="window.location.href='about-details.html'">Read more</button>
+  </div>
+</section>
+
+<!-- Styles -->
+<style>
+  #about {
+    background: #081b29;
+    color: #ededed;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
+    cursor: none;
+  }
+
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+
+  #about h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  #about h1 span {
+    color: #00abf0;
+  }
+
+  .circle-glow {
+    margin-top: 2rem;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 3px solid #00abf0;
+    box-shadow: 0 0 25px #00abf0, inset 0 0 20px #00abf0;
+    position: relative;
+    animation: pulse 3s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 25px #00abf0, inset 0 0 20px #00abf0; }
+    50% { box-shadow: 0 0 35px #00abf0, inset 0 0 30px #00abf0; }
+  }
+
+  .floating-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #00abf0;
+    border-radius: 50%;
+    top: -10px;
+    left: 50%;
+    animation: orbit 4s linear infinite;
+    transform-origin: 50% 130px;
+  }
+
+  @keyframes orbit {
+    0% { transform: rotate(0deg) translateX(110px); }
+    100% { transform: rotate(360deg) translateX(110px); }
+  }
+
+  .name {
+    margin-top: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .line {
+    width: 300px;
+    height: 1px;
+    background: #00abf0;
+    margin: 1.5rem auto;
+  }
+
+  .btn {
+    margin-top: 1rem;
+    padding: 0.8rem 2rem;
+    background: #00abf0;
+    color: #081b29;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 0 15px #00abf0;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #00abf0;
+  }
+
+  .cursor {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background: #00abf0;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00abf0, 0 0 16px #00abf0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
+</style>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  // Particle background
+  particlesJS("about-particles", {
+    "particles": {
+      "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+      "color": { "value": "#00abf0" },
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.5, "random": true },
+      "size": { "value": 2.5, "random": true },
+      "line_linked": { "enable": false },
+      "move": {
+        "enable": true,
+        "speed": 1,
+        "direction": "none",
+        "random": true,
+        "out_mode": "out"
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": { "enable": true, "mode": "repulse" },
+        "onclick": { "enable": false }
+      },
+      "modes": {
+        "repulse": { "distance": 60, "duration": 0.4 }
+      }
+    },
+    "retina_detect": true
+  });
+
+  // Custom cursor
+  const aboutCursor = document.getElementById("about-cursor");
+  document.addEventListener("mousemove", e => {
+    aboutCursor.style.left = `${e.clientX}px`;
+    aboutCursor.style.top = `${e.clientY}px`;
+  });
+</script>
+
+<!-- education section design -->
+<section class="education" id="education">
+  <title>Blog & Articles with 3D Particle Parallax</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    /* Dark theme variables only */
+    :root {
+      --bg-color: #081b29;
+      --text-color: #ededed;
+      --accent-color: #00abf0;
+      --card-bg: #112e42;
+      --card-hover: #003f68;
+      --input-bg: #112e42;
+      --input-placeholder: #7ea2ce;
+      --input-focus-bg: #184a70;
+      --cursor-color: #00abf0;
+      --shadow-color: rgba(0, 171, 240, 0.3);
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      border: none;
+      outline: none;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      cursor: none;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      padding: 6rem 10%;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      z-index: 0;
+    }
+
+    #particle-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+      background: var(--bg-color);
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--accent-color);
+      text-align: center;
+      z-index: 10;
+      position: relative;
+    }
+
+    .typing-container {
+      font-size: 1.8rem;
+      color: var(--accent-color);
+      font-weight: 500;
+      height: 2.2rem;
+      margin-bottom: 1.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid var(--accent-color);
+      width: fit-content;
+      animation: blinkCursor 0.7s step-end infinite;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      position: relative;
+      z-index: 10;
+    }
+
+    @keyframes blinkCursor {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    .intro-text {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--input-placeholder);
+      line-height: 1.5;
+      position: relative;
+      z-index: 10;
+    }
+
+    #search-bar {
+      display: block;
+      margin: 0 auto 3rem auto;
+      width: 60%;
+      max-width: 400px;
+      padding: 1rem 1.5rem;
+      font-size: 1.6rem;
+      border-radius: 30px;
+      border: 2px solid var(--accent-color);
+      background: var(--input-bg);
+      color: var(--text-color);
+      box-shadow: 0 0 15px var(--shadow-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      outline: none;
+      z-index: 10;
+    }
+
+    #search-bar::placeholder {
+      color: var(--input-placeholder);
+    }
+
+    #search-bar:focus {
+      background-color: var(--input-focus-bg);
+      color: var(--text-color);
+    }
+
+    .blog-list {
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+      z-index: 10;
+    }
+
+    article {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+      background: var(--card-bg);
+      padding: 2.5rem 3rem;
+      margin-bottom: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px var(--shadow-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.4s ease, background-color 0.4s ease;
+      cursor: default;
+      color: var(--text-color);
+      opacity: 0;
+      transform: translateY(20px);
+      will-change: transform, opacity;
+    }
+
+   article.visible {
+      opacity: 1;
+      transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    article:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px var(--shadow-color);
+      color: var(--accent-color);
+      background: var(--card-hover);
+    }
+
+    article h2 {
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    article p.date {
+      font-size: 1.3rem;
+      color: var(--input-placeholder);
+      margin-bottom: 1.5rem;
+    }
+
+    article p.content {
+      font-size: 1.7rem;
+      line-height: 1.6;
+      color: var(--text-color);
+    }
+
+    #custom-cursor {
+      position: fixed;
+      top: 0; left: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      pointer-events: none;
+      background-color: var(--cursor-color);
+      box-shadow: 0 0 10px var(--cursor-color);
+      transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      mix-blend-mode: difference;
+    }
+
+    #custom-cursor.hovered {
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      box-shadow: 0 0 30px var(--cursor-color);
+    }
+
+    /* Scroll progress bar */
+    #scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 5px;
+      background: var(--accent-color);
+      width: 0%;
+      z-index: 10000;
+    }
+
+    /* Back to Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      border: none;
+      color: var(--bg-color);
+      font-size: 2rem;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px var(--accent-color);
+      z-index: 9999;
+      transition: background-color 0.3s ease;
+    }
+
+    #back-to-top:hover {
+      background-color: #0093cc;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 4rem 5%;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      article {
+        padding: 2rem 2rem;
+      }
+
+      article h2 {
+        font-size: 2rem;
+      }
+
+      article p.content {
+        font-size: 1.5rem;
+      }
+
+      #search-bar {
+        width: 90%;
+      }
+    }
+
+    
+  </style>
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+
+  <div id="scroll-progress"></div>
+
+  <h1><span style="color: var(--accent-color);">Blogs An</span><span style="color: var(--text-color);">d Articles</span></h1>
+
+
+  <div class="typing-container" id="typing"></div>
+
+  <input type="search" id="search-bar" placeholder="Search articles..." aria-label="Search articles" />
+
+  <p class="intro-text">
+    Dive into the latest articles, insightful blogs, and expert opinions.
+  </p>
+
+  <section class="blog-list" id="blog-list">
+    <article>
+      <h2>Exploring the Future of AI</h2>
+      <p class="date">June 10, 2025</p>
+      <p class="content">Artificial intelligence continues to transform the world, touching everything from healthcare to entertainment. Discover how AI will shape our tomorrow.</p>
+    </article>
+    <article>
+      <h2>The Art of Mindful Living</h2>
+      <p class="date">June 5, 2025</p>
+      <p class="content">Learn simple yet powerful mindfulness techniques to enhance your daily life, reduce stress, and improve mental clarity.</p>
+    </article>
+    <article>
+      <h2>Design Trends in 2025</h2>
+      <p class="date">May 30, 2025</p>
+      <p class="content">Explore the hottest design trends that are dominating the digital world in 2025, from minimalism to immersive experiences.</p>
+    </article>
+  </section>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <div id="custom-cursor"></div>
+
+  <script>
+    // Typing animation with new words
+    const typingElement = document.getElementById('typing');
+    const texts = ['Discover.', 'Learn.', 'Grow.'];
+    let textIndex = 0;
+    let charIndex = 0;
+    const typingSpeed = 150;
+    const erasingSpeed = 75;
+    const delayBetweenTexts = 1500;
+
+    function type() {
+      if (charIndex < texts[textIndex].length) {
+        typingElement.textContent += texts[textIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingSpeed);
+      } else {
+        setTimeout(erase, delayBetweenTexts);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typingElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, erasingSpeed);
+      } else {
+        textIndex = (textIndex + 1) % texts.length;
+        setTimeout(type, typingSpeed);
+      }
+    }
+
+    type();
+
+    // Particle animation with 3D parallax effect
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+    let mouseX = 0, mouseY = 0;
+    let windowWidth, windowHeight;
+
+    class Particle {
+      constructor(x, y, z, size, speedX, speedY, color) {
+        this.x = x;
+        this.y = y;
+        this.z = z; // depth for parallax
+        this.size = size;
+        this.speedX = speedX;
+        this.speedY = speedY;
+        this.color = color;
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x < 0 || this.x > windowWidth) this.speedX *= -1;
+        if (this.y < 0 || this.y > windowHeight) this.speedY *= -1;
+
+        // Parallax effect based on mouse
+        const parallaxX = (mouseX - windowWidth / 2) * (this.z / 100);
+        const parallaxY = (mouseY - windowHeight / 2) * (this.z / 100);
+
+        this.renderX = this.x + parallaxX;
+        this.renderY = this.y + parallaxY;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.fillStyle = this.color;
+        ctx.shadowColor = this.color;
+        ctx.shadowBlur = 10;
+        ctx.arc(this.renderX, this.renderY, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particlesArray = [];
+      for (let i = 0; i < 120; i++) {
+        const x = Math.random() * windowWidth;
+        const y = Math.random() * windowHeight;
+        const z = Math.random() * 20 + 5;
+        const size = Math.random() * 2 + 1;
+        const speedX = (Math.random() - 0.5) * 0.3;
+        const speedY = (Math.random() - 0.5) * 0.3;
+        const alpha = Math.random() * 0.7 + 0.3;
+const color = `rgba(0, 171, 240, ${alpha})`;
+
+        particlesArray.push(new Particle(x, y, z, size, speedX, speedY, color));
+      }
+    }
+
+    function resizeCanvas() {
+      windowWidth = window.innerWidth;
+      windowHeight = window.innerHeight;
+      canvas.width = windowWidth;
+      canvas.height = windowHeight;
+      initParticles();
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    resizeCanvas();
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particlesArray.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+
+    animateParticles();
+
+    // Scroll progress bar logic
+    const scrollProgress = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      scrollProgress.style.width = scrollPercent + '%';
+
+      // Show/hide Back to Top button
+      const backToTopBtn = document.getElementById('back-to-top');
+      if (scrollTop > 300) {
+        backToTopBtn.style.display = 'flex';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+
+      // Animate articles on scroll
+      const articles = document.querySelectorAll('article');
+      articles.forEach(article => {
+        const rect = article.getBoundingClientRect();
+        if (rect.top < window.innerHeight * 0.85) {
+          article.classList.add('visible');
+        }
+      });
+    });
+
+    // Back to top button click
+    document.getElementById('back-to-top').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Custom cursor logic
+    const cursor = document.getElementById('custom-cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    // Cursor hover effect on articles
+    const articles = document.querySelectorAll('article');
+    articles.forEach(article => {
+      article.addEventListener('mouseenter', () => {
+        cursor.classList.add('hovered');
+      });
+      article.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hovered');
+      });
+    });
+
+    // Live Search Filter
+    const searchInput = document.getElementById('search-bar');
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      articles.forEach(article => {
+        const title = article.querySelector('h2').textContent.toLowerCase();
+        const content = article.querySelector('p.content').textContent.toLowerCase();
+        if (title.includes(query) || content.includes(query)) {
+          article.style.display = 'block';
+          article.classList.add('visible'); // Show with animation if matches
+        } else {
+          article.style.display = 'none';
+          article.classList.remove('visible');
+        }
+      });
+    });
+
+    // Trigger scroll event on load to animate visible articles
+    window.dispatchEvent(new Event('scroll'));
+  </script>
+    </div>
+   </section>
+
+   <!-- skills section design --> 
+<!-- <section class="skills" id="skills">
+    <h2 class="heading">MY <span>Skills</span></h2>
+    <div class="skills-row">
+        <div class="skills-column">
+            <h3 class="title">Codeing Skills </h3>
+
+            <div class="skills-box">
+                <div class="skills-content">
+                    <div class="progress">
+                        <h3>DNGRS <span>90%</span></h3>
+                        <div class="bar"><span></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-box">
+                <div class="skills-content">
+                    <div class="progress">
+                        <h3>B.ATCK.ROLE <span>80%</span></h3>
+                        <div class="bar"><span></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-box">
+                <div class="skills-content">
+                    <div class="progress">
+                        <h3>M17 <span>65%</span></h3>
+                        <div class="bar"><span></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-box">
+                <div class="skills-content">
+                    <div class="progress">
+                        <h3>HKING-SKILLS <span>75%</span></h3>
+                        <div class="bar"><span></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-column">
+            <h3 class="title">Estimated Muder.rate</h3>
+
+            <div class="skills-box">
+                <div class="skills-content">
+                    <div class="progress">
+                        <h3>PHP <span>95%</span></h3>
+                        <div class="bar"><span></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-box">
+                <div class="skills-content">
+                    <div class="progress">
+                        <h3>Python <span>67%</span></h3>
+                        <div class="bar"><span></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-box">
+                <div class="skills-content">
+                    <div class="progress">
+                        <h3>Web dev <span>85%</span></h3>
+                        <div class="bar"><span></span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-box">
+                <div class="skills-content">
+                    <div class="progress">
+                        <h3>H.SKILLS <span>60%</span></h3>
+                        <div class="bar"><span></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section> -->
+
+     <!-- My projects section design --> 
+<section class="projects-section" id="projects">
+  <header>
+    <h1><span style="color: var(--accent-color)">My Proj</span><span style="color: white;">ects</span></h1>
+  </header>
+
+  <div class="projects">
+    <div class="project-card">
+      <h2>Interactive Portfolio</h2>
+      <p>A futuristic portfolio using glassmorphism and animated highlights.</p>
+      <span class="tag">NEW</span>
+    </div>
+    <div class="project-card">
+      <h2>Galaxy Explorer</h2>
+      <p>A 3D canvas-based interactive map of galaxies and stars using Three.js.</p>
+      <span class="tag">HOT</span>
+    </div>
+    <div class="project-card">
+      <h2>Crypto Tracker</h2>
+      <p>Track live cryptocurrency values with glowing graphs and floating UI.</p>
+      <span class="tag">LIVE</span>
+    </div>
+  </div>
+
+  <div class="feature-tiles">
+    <div class="feature-tile">
+      <h3>Glassmorphic UI</h3>
+      <p>Project cards use a translucent frosted glass effect with light glows.</p>
+    </div>
+    <div class="feature-tile">
+      <h3>Cosmic Particle FX</h3>
+      <p>Floating cosmic particles in the background create a deep 3D feel.</p>
+    </div>
+    <div class="feature-tile">
+      <h3>Timeline Progress</h3>
+      <p>Visualize your project development milestones in a sleek vertical timeline.</p>
+    </div>
+    <div class="feature-tile">
+      <h3>Glow Tags</h3>
+      <p>Highlight important projects with dynamic tags like NEW and HOT.</p>
+    </div>
+    <div class="feature-tile">
+      <h3>Animated Ring FX</h3>
+      <p>Each card glows with a rotating aura that gives it an active state.</p>
+    </div>
+  </div>
+
+  <style>
+    .projects-section {
+      --bg-color: #081b29;
+      --text-color: #ededed;
+      --accent-color: #00abf0;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glow-color: #00f0ff33;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 6rem 5% 4rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .projects-section header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .projects-section header h1 {
+      font-size: 4rem;
+      display: inline-block;
+      font-weight: 700;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .project-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(15px);
+      border: 1px solid #00abf055;
+      border-radius: 1rem;
+      padding: 2rem;
+      overflow: hidden;
+      box-shadow: 0 0 20px var(--glow-color);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      position: relative;
+    }
+
+    .project-card::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(var(--accent-color), transparent 30%, var(--accent-color));
+      animation: rotate 6s linear infinite;
+      z-index: 0;
+      opacity: 0.1;
+      border-radius: 1rem;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px var(--accent-color);
+    }
+
+    .project-card h2 {
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-card p {
+      font-size: 1.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-card .tag {
+      font-size: 0.9rem;
+      padding: 0.2rem 0.6rem;
+      background: var(--accent-color);
+      color: var(--bg-color);
+      border-radius: 1rem;
+      display: inline-block;
+      margin-top: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .feature-tiles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .feature-tile {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      text-align: center;
+      border: 1px solid var(--accent-color);
+      flex: 1 1 250px;
+      transition: all 0.3s;
+    }
+
+    .feature-tile:hover {
+      background: var(--accent-color);
+      color: var(--bg-color);
+      transform: translateY(-5px);
+    }
+
+    .feature-tile h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-tile p {
+      font-size: 1.2rem;
+    }
+  </style>
+</section>
+
+
+   
+   <!-- contact section design -->
+   <section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me!</span></h2>
+
+    <form action="#">
+        <div class="input-box">
+            <div class="input-field">
+                <input type="text" placeholder="Full Name" required>
+                <span class="focus"></span>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Email Address" required>
+                <span class="focus"></span>
+            </div>
+        </div>
+
+        <div class="input-box">
+            <div class="input-field">
+                <input type="number" placeholder="Mobile Number" required>
+                <span class="focus"></span>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Email Subject" required>
+                <span class="focus"></span>
+            </div>
+        </div>
+
+        <div class="textarea-field">
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <span class="focus"></span>
+        </div>
+
+        <div class="btn-box btns">
+            <button type="submit" class="btn">Submit</button>
+        </div>
+    </form>
+   </section>
+
+   <!-- footer design -->
+   <footer class="footer">
+    <div class="footer-text">
+        <p>Copyright &copy; 2023 by Music'World | All Rights Reserved.</p>
+    </div>
+
+    <div class="footer-iconTop">
+        <a href="#"><i class='bx bxs-up-arrow-alt'></i></a>
+    </div>
+   </footer>
+
+
+   <script src="gohar.js"></script>
+</body>
+
+</html>
