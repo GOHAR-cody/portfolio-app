@@ -39,7 +39,13 @@ top:15em
   object-fit: cover;
   border-radius: 50%; /* Makes the image perfectly round */
 }
-
+html, body {
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
 </style>
 </head>
 
@@ -990,52 +996,73 @@ const color = `rgba(0, 171, 240, ${alpha})`;
     </div>
    </section> -->
 
-     <!-- My projects section design --> 
-<section class="projects-section" id="projects">
-  <header>
-    <h1><span style="color: var(--accent-color)">My Proj</span><span style="color: white;">ects</span></h1>
-  </header>
+     <!-- My projects section design --> <section class="projects-section" id="projects">
+ <header>
+  <h1><span style="color: var(--accent-color)">My Proj</span><span style="color: white;">ects</span></h1>
+</header>
 
+<!-- Development Projects -->
+<div class="project-category">
+  <h2 class="category-heading">💻 Development Projects</h2>
   <div class="projects">
-    <div class="project-card">
-      <h2>Interactive Portfolio</h2>
-      <p>A futuristic portfolio using glassmorphism and animated highlights.</p>
-      <span class="tag">NEW</span>
-    </div>
-    <div class="project-card">
-      <h2>Galaxy Explorer</h2>
-      <p>A 3D canvas-based interactive map of galaxies and stars using Three.js.</p>
-      <span class="tag">HOT</span>
-    </div>
-    <div class="project-card">
-      <h2>Crypto Tracker</h2>
-      <p>Track live cryptocurrency values with glowing graphs and floating UI.</p>
-      <span class="tag">LIVE</span>
-    </div>
-  </div>
+    <a href="project-details.html" class="project-card-link">
+      <div class="project-card">
+        <h2>Companion Psychotherapy System</h2>
+        <p>A mental health web platform blending psychotherapy and AI to connect users with the right support.</p>
+        <span class="tag">NEW</span>
+      </div>
+    </a>
 
+    <a href="project-details.html" class="project-card-link">
+      <div class="project-card">
+        <h2>E-Certificate Generator</h2>
+        <p>Automate certificate creation using CSV data and dynamic HTML templates—fast, simple, and scalable.</p>
+        <span class="tag">HOT</span>
+      </div>
+    </a>
+
+    <a href="project-details.html" class="project-card-link">
+      <div class="project-card">
+        <h2>Insure Cap</h2>
+        <p>AI-powered insurance assistant that analyzes user-uploaded images to assess claims and coverage.</p>
+        <span class="tag">HOT</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- Design Projects -->
+<div class="project-category">
+  <h2 class="category-heading">🎨 Graphics & UI/UX Design</h2>
   <div class="feature-tiles">
     <div class="feature-tile">
-      <h3>Glassmorphic UI</h3>
-      <p>Project cards use a translucent frosted glass effect with light glows.</p>
+      <h3>Extreme Pro </h3>
+      <p>Crafted a modern, responsive UI/UX for a professional car care company's digital presence.</p>
     </div>
+
     <div class="feature-tile">
-      <h3>Cosmic Particle FX</h3>
-      <p>Floating cosmic particles in the background create a deep 3D feel.</p>
+      <h3>Hass Go</h3>
+      <p>Designed intuitive mockups for a tourism app, focusing on user journey and location-based services.</p>
     </div>
+
     <div class="feature-tile">
-      <h3>Timeline Progress</h3>
-      <p>Visualize your project development milestones in a sleek vertical timeline.</p>
+      <h3>CodeSpark </h3>
+      <p>Created sleek visuals and engaging interfaces for a programming learning platform and companion app.</p>
     </div>
+
     <div class="feature-tile">
-      <h3>Glow Tags</h3>
-      <p>Highlight important projects with dynamic tags like NEW and HOT.</p>
+      <h3>Event Management System</h3>
+      <p>Built a system to plan, manage, and track events with real-time updates and custom dashboards.</p>
     </div>
+
     <div class="feature-tile">
-      <h3>Animated Ring FX</h3>
-      <p>Each card glows with a rotating aura that gives it an active state.</p>
+      <h3>Pharmacy Management Solution</h3>
+      <p>Developed a streamlined system for pharmacy inventory, billing, and patient records with a clean UI.</p>
     </div>
   </div>
+</div>
+
+
 
   <style>
     .projects-section {
@@ -1069,6 +1096,11 @@ const color = `rgba(0, 171, 240, ${alpha})`;
       margin-bottom: 4rem;
     }
 
+    .project-card-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
     .project-card {
       background: var(--glass-bg);
       backdrop-filter: blur(15px);
@@ -1100,17 +1132,20 @@ const color = `rgba(0, 171, 240, ${alpha})`;
       box-shadow: 0 0 35px var(--accent-color);
     }
 
-    .project-card h2 {
-      color: var(--accent-color);
-      margin-bottom: 1rem;
+    .project-card h2,
+    .project-card p,
+    .project-card .tag {
       position: relative;
       z-index: 1;
     }
 
+    .project-card h2 {
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
     .project-card p {
       font-size: 1.4rem;
-      position: relative;
-      z-index: 1;
     }
 
     .project-card .tag {
@@ -1121,8 +1156,6 @@ const color = `rgba(0, 171, 240, ${alpha})`;
       border-radius: 1rem;
       display: inline-block;
       margin-top: 1rem;
-      position: relative;
-      z-index: 1;
     }
 
     @keyframes rotate {
@@ -1161,8 +1194,24 @@ const color = `rgba(0, 171, 240, ${alpha})`;
     .feature-tile p {
       font-size: 1.2rem;
     }
+    .project-category {
+  margin-bottom: 4rem;
+}
+
+.category-heading {
+  font-size: 2.2rem;
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
   </style>
 </section>
+
 
 
    
